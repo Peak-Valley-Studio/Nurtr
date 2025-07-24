@@ -1,31 +1,32 @@
-import { Link, Tabs } from 'expo-router';
-
-import { HeaderButton } from '../../components/HeaderButton';
+import { Tabs } from 'expo-router';
 import { TabBarIcon } from '../../components/TabBarIcon';
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: 'black',
+        tabBarActiveTintColor: '#FF69B4',
+        headerShown: false
       }}>
       <Tabs.Screen
-        name="index"
+        name="Recommendations"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <HeaderButton />
-            </Link>
-          ),
+          title: 'Vibes',
+          tabBarIcon: () => <TabBarIcon name="comments" color={'#FF69B4'} />,
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="Home"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Home',
+          tabBarIcon: () => <TabBarIcon name="home" color={'#FF69B4'} />,
+        }}
+      />
+      <Tabs.Screen
+        name="Calendar"
+        options={{
+          title: 'Calendar',
+          tabBarIcon: () => <TabBarIcon name="calendar" color={'#FF69B4'} />,
         }}
       />
     </Tabs>
